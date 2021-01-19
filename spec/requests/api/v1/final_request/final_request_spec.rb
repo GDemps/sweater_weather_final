@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 describe 'The final endpoint' do
-  it 'returns food and forecast for destination city', :vcr do
-    get '/api/v1/munchies', params: {start: 'denver,co', end: 'pueblo, do'}
+  it 'can return destination city, travel time, and food', :vcr do
+    get '/api/v1/munchies', params: {start: 'denver,co', end: 'pueblo, co'}
 
     expect(response).to be_successful
     expect(response.status).to eq(200)
 
-    forecast = JSON.parse(response.body, symbolize_names: true)
+    destination = JSON.parse(response.body, symbolize_names: true)
 
     require "pry"
     binding.pry
