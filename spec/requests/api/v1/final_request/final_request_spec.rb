@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'The final endpoint' do
   it 'can return destination city, travel time, and food', :vcr do
-    get '/api/v1/munchies', params: {start: 'denver,co', end: 'pueblo, co'}
+    get '/api/v1/munchies', params: {start: 'denver,co', end: 'pueblo, co', cat: 'mexican'}
 
     expect(response).to be_successful
     expect(response.status).to eq(200)

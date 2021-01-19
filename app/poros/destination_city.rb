@@ -3,7 +3,5 @@ class DestinationCity
 
   def initialize(destination)
     @name = destination.name
-    require "pry"
-    binding.pry
   end
 end
