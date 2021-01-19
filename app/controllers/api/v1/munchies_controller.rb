@@ -1,7 +1,6 @@
 class Api::V1::MunchiesController < ApplicationController
   def index
-    coords = MunchiesFacade.new.get_coordinates(params[:start], params[:end])
-    # forecast = ForecastFacade.get_forecast(location_params)
+    coords = MunchiesFacade.new.get_destination_city(params[:start], params[:end])
     # render json: ForecastSerializer.new(forecast)
   end
 
