@@ -5,8 +5,8 @@ class LatLonService
       req.params['location'] = location
       req.params['maxResults'] = 1
     end
-    data = parse_data(response)
-    coords = LatLon.new(data)
+    parse_data(response)
+    # coords = LatLon.new(data)
   end
 
   def parse_data(response)
