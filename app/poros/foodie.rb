@@ -1,7 +1,9 @@
 class Foodie
   attr_reader :id,
               :type,
-              :attributes,
+              :end_location,
+              :travel_time,
+              :forecast,
               :restaurant
 
   def initialize(directions, location, forecast, restaurant)
@@ -12,7 +14,6 @@ class Foodie
     @real_time = directions[:route][:realTime]
     @arrival_forecast = get_arrival_forecast(forecast, @real_time)
     @forecast = { summary: @arrival_forecast.conditions, temperature: @arrival_forecast.temperature }
-    @attributes = { end_location: @end_location, travel_time: @travel_time, forecast: @forecast }
     @restaurant = { name: restaurant.name, address: restaurant.address }
   end
 

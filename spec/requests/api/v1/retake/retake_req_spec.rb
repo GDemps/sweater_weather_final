@@ -7,10 +7,20 @@ describe 'The retake endpoint' do
     expect(response.status).to eq(200)
 
     retake_data = JSON.parse(response.body, symbolize_names: true)
-    require "pry"
-    binding.pry
-    # expect(retake_data[:data][:attributes]).to have_key(:current_weather)
-    # expect(retake_data[:data][:attributes]).to have_key(:hourly_weather)
-    # expect(retake_data[:data][:attributes]).to have_key(:daily_weather)
+
+    expect(retake_data[:data][:attributes]).to have_key(:end_location)
+    expect(retake_data[:data][:attributes][:end_location]).to eq("Pueblo, CO")
+
+    expect(retake_data[:data][:attributes]).to have_key(:travel_time)
+    expect(retake_data[:data][:attributes][:travel_time]).to be_a(String)
+
+    expect(retake_data[:data][:attributes]).to have_key(:forecast)
+    expect(retake_data[:data][:attributes][:forecast]).to have_key(:summary)
+    expect(retake_data[:data][:attributes][:forecast][:summary]).to be_a(String)
+
+    expect(retake_data[:data][:attributes][:forecast]).to have_key(:temperature)
+
+    expect(retake_data[:data][:attributes][:restaurant][:name]).to eq("Bingo Burger")
+    expect(retake_data[:data][:attributes][:restaurant][:address]).to eq("101 Central Plaza 81003")
   end
 end
