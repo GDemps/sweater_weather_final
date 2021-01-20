@@ -20,8 +20,6 @@ describe 'Road trip endpoint' do
     expect(road_trip[:data][:attributes]).to have_key(:end_city)
     expect(road_trip[:data][:attributes]).to have_key(:travel_time)
     expect(road_trip[:data][:attributes]).to have_key(:weather_at_eta)
-    require "pry"
-    binding.pry
   end
 
   it 'returns a 401 if no API key is sent', :vcr do
