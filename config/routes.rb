@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :sessions, only: [:create]
       resources :backgrounds, only: [:index]
       resources :road_trip, only: [:create]
+      resources :foodie, only: [:index]
     end
   end
 end
