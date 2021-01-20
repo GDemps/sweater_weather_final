@@ -7,6 +7,7 @@ RSpec.describe User do
     it 'has a unique api_key' do
       user1 = create(:user)
       user2 = create(:user)
+
       expect(user1.api_key).to_not eq(user2.api_key)
     end
   end
