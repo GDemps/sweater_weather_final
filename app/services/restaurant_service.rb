@@ -4,6 +4,7 @@ class RestaurantService
       req.params['search'] = search
       req.params['lat'] = latlon.lat
       req.params['lon'] = latlon.lon
+      req.params['count'] = 1
     end
     parse_data(response)
   end
