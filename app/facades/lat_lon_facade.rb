@@ -4,7 +4,11 @@ class LatLonFacade
     LatLon.new(coordinates)
   end
 
-  # def self.get_trip(origin, destination)
-  #   trip_duration = LatLonService.get_trip_duration(origin, destination)
-  # end
+  def self.get_trip(origin, destination)
+    LatLonService.get_trip_duration(origin, destination)
+  end
+
+  def directions(origin, destination)
+    LatLonService.new.directions(origin, destination)
+  end
 end

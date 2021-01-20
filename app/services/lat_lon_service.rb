@@ -6,7 +6,14 @@ class LatLonService
       req.params['maxResults'] = 1
     end
     parse_data(response)
-    # coords = LatLon.new(data)
+  end
+
+  def directions(origin, destination)
+    resp = conn.get('/directions/v2/route') do |req|
+      req.params['from'] = origin
+      req.params['to'] = destination
+    end
+    parse_data(resp)
   end
 
   def parse_data(response)

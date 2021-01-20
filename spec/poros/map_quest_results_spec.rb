@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'LatLon Maqquest Service Results' do
+describe 'LatLon Maqquest Poro' do
   it 'returns a location object', :vcr do
     location_arg = 'denver, co'
     location = LatLonService.new.get_coordinates(location_arg)
